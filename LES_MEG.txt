@@ -1,0 +1,11 @@
+Publisering
+
+1. Endre teksten DIN_EPOST_HER i index.html til riktig e-postadresse.
+2. Last opp disse to filene til samme mappe på webserveren:
+   - index.html
+   - olga-portrait.jpg
+3. Åpne siden i nettleser og test knappen «Приєднатися».
+
+Viktig:
+Ikke legg app-passord, SMTP-passord eller Gmail/Google-passord direkte i index.html.
+Alt som ligger i HTML/CSS/JavaScript kan sees av alle besøkende.
