@@ -7,14 +7,14 @@
   <meta name="description" content="10-денна психологічна подорож до себе. Простір, щоб зупинитися, помітити свою увагу, думки, почуття і моменти життя.">
   <style>
     :root {
-      --bg: #f7f3ed;
-      --paper: #fffaf3;
-      --text: #2b2926;
-      --muted: #6f6860;
-      --line: #e3d8ca;
-      --accent: #9b3f42;
-      --accent-dark: #7f3034;
-      --shadow: 0 18px 50px rgba(40, 30, 20, .10);
+      --bg: #f5f8fd;
+      --paper: #fbfdff;
+      --text: #536ea8;
+      --muted: #6f84b7;
+      --line: #d9e4f4;
+      --accent: #4a66a6;
+      --accent-dark: #3e5b97;
+      --shadow: 0 18px 44px rgba(62, 91, 151, .10);
       --radius: 28px;
     }
 
@@ -22,232 +22,232 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(155,63,66,.10), transparent 32rem),
-        linear-gradient(180deg, var(--bg), #efe7dc);
+        radial-gradient(circle at top center, rgba(122, 153, 212, .10), transparent 32rem),
+        linear-gradient(180deg, var(--bg), #edf3fb);
       color: var(--text);
       line-height: 1.65;
     }
 
     .page {
-      width: min(1120px, calc(100% - 36px));
+      width: min(860px, calc(100% - 30px));
       margin: 0 auto;
-      padding: 56px 0;
+      padding: 34px 0 48px;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 42px;
-      align-items: center;
-      min-height: calc(100vh - 112px);
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 56px);
+      box-shadow: var(--shadow);
+      text-align: center;
     }
 
     .portrait-wrap {
-      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
     }
 
-    .portrait {F
-      width: 100%;
-      max-height: 760px;
+    .portrait {
+      width: clamp(170px, 26vw, 245px);
+      height: clamp(170px, 26vw, 245px);
       object-fit: cover;
-      object-position: center top;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      object-position: center 34%;
+      border-radius: 50%;
+      border: 6px solid #ffffff;
+      outline: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(62, 91, 151, .14);
       display: block;
-      border: 1px solid rgba(255,255,255,.7);
-    }
-
-    .content {
-      background: rgba(255, 250, 243, .78);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: clamp(28px, 5vw, 58px);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: .82rem;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
+      background: white;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2.55rem, 6vw, 5.4rem);
-      line-height: .96;
-      letter-spacing: -0.055em;
-      font-weight: 500;
+      margin: 0 0 8px;
+      font-size: clamp(2.3rem, 6vw, 4.2rem);
+      line-height: 1.03;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.04em;
     }
 
     .subtitle {
-      margin: 22px 0 30px;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2.1vw, 1.35rem);
-      max-width: 36rem;
+      margin: 0 auto 22px;
+      font-size: clamp(1.15rem, 3.2vw, 2rem);
+      font-weight: 700;
+      color: var(--accent);
+      max-width: 42rem;
+    }
+
+    .price {
+      margin: 10px 0 30px;
+      font-size: clamp(1.7rem, 4vw, 2.35rem);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .price .old {
+      margin-left: 10px;
+      color: #7e91bf;
+      text-decoration: line-through;
+    }
+
+    p {
+      margin: 0 0 1.25rem;
+      font-size: clamp(1.05rem, 2.8vw, 1.25rem);
     }
 
     .lead {
-      font-size: 1.08rem;
-      margin-top: 0;
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .questions {
-      margin: 30px 0;
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    .section {
+      margin-top: 16px;
     }
 
-    .question-title {
-      font-size: clamp(1.5rem, 3vw, 2.35rem);
-      line-height: 1.12;
-      margin: 0 0 20px;
+    .question {
+      margin: 24px 0 18px;
+      font-size: clamp(1.45rem, 4vw, 2.1rem);
+      font-weight: 700;
       color: var(--accent-dark);
-      font-weight: 500;
     }
 
-    p { margin: 0 0 1rem; }
+    .block {
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     ul {
-      margin: 14px 0 22px;
-      padding-left: 1.1rem;
+      list-style: none;
+      padding: 0;
+      margin: 8px auto 22px;
+      max-width: 42rem;
     }
 
-    li { margin: .35rem 0; }
+    li {
+      margin: .5rem 0;
+      font-size: clamp(1.05rem, 2.8vw, 1.2rem);
+    }
 
     .cta-row {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      margin-top: 34px;
+      gap: 10px;
+      margin-top: 30px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
+      min-height: 54px;
+      padding: 0 26px;
       border-radius: 999px;
       background: var(--accent);
-      color: #fff;
+      color: white;
       text-decoration: none;
-      font-family: Arial, sans-serif;
       font-weight: 700;
-      letter-spacing: .01em;
+      font-size: 1rem;
+      box-shadow: 0 10px 24px rgba(74, 102, 166, .24);
       transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
-      box-shadow: 0 10px 28px rgba(155,63,66,.24);
     }
 
     .button:hover {
       background: var(--accent-dark);
       transform: translateY(-1px);
-      box-shadow: 0 14px 32px rgba(155,63,66,.28);
+      box-shadow: 0 14px 28px rgba(74, 102, 166, .28);
     }
 
     .small-note {
       color: var(--muted);
-      font-size: .92rem;
-      font-family: Arial, sans-serif;
+      font-size: .95rem;
     }
 
     footer {
-      padding: 30px 0 0;
-      color: var(--muted);
-      font-size: .9rem;
-      font-family: Arial, sans-serif;
+      padding-top: 18px;
       text-align: center;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
-    @media (max-width: 860px) {
-      .page { padding: 22px 0 38px; }
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        min-height: auto;
-      }
-      .portrait {
-        max-height: 560px;
-      }
-      .content {
-        padding: 28px 22px;
-      }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 18px, 860px); padding-top: 18px; }
+      .card { padding: 24px 18px 30px; }
+      p, li { font-size: 1.02rem; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero" aria-label="Помічаючи життя">
+    <section class="card" aria-label="Помічаючи життя">
       <div class="portrait-wrap">
-        <img class="portrait" src="olga-portrait.jpg" alt="Психологічна подорож до себе">
+        <img class="portrait" src="olga-round-centered.jpg" alt="Психологічна подорож до себе">
       </div>
 
-      <article class="content">
-        <p class="eyebrow">10 днів уважності до себе</p>
-        <h1>Помічаючи життя</h1>
-        <p class="subtitle">10-денна психологічна подорож до себе</p>
+      <h1>Помічаючи життя</h1>
+      <div class="subtitle">10-денна психологічна подорож до себе</div>
 
-        <p class="lead">
-          Це не челендж, не марафон продуктивності, не курс, де потрібно стати кращою версією себе.
-        </p>
+      <div class="price">20 €<span class="old">50 €</span></div>
 
-        <div class="questions">
-          <p>Це запрошення на 10 днів зупинитися і подивитися:</p>
-          <h2 class="question-title">Де перебуває моя увага?</h2>
+      <p class="lead">
+        Це не челендж, не марафон продуктивності, не курс, де потрібно стати кращою версією себе.
+      </p>
 
-          <p>Більшу частину дня ми навіть не помічаємо, куди вона спрямована.</p>
+      <p class="lead">
+        Це запрошення на 10 днів зупинитися і подивитися:
+      </p>
 
-          <p>
-            Ми можемо жити спогадами про минуле.<br>
-            Прокручувати старі розмови.<br>
-            Хвилюватися про майбутнє.<br>
-            Порівнювати себе з іншими.<br>
-            Розчинятися в новинах, стрічках і нескінченному потоці інформації.
-          </p>
+      <div class="question">Де перебуває моя увага?</div>
 
-          <p>
-            І поки наша увага зайнята всім цим, власне життя відбувається десь на периферії.
-          </p>
-        </div>
+      <p class="block">
+        Більшу частину дня ми навіть не помічаємо, куди вона спрямована.
+      </p>
 
-        <p>Протягом 10 днів ми будемо досліджувати:</p>
+      <p class="block">
+        Ми можемо жити спогадами про минуле.<br>
+        Прокручувати старі розмови.<br>
+        Хвилюватися про майбутнє.<br>
+        Порівнювати себе з іншими.<br>
+        Розчинятися в новинах, стрічках і нескінченному потоці інформації.
+      </p>
 
-        <ul>
-          <li>де найчастіше перебуває моя увага;</li>
-          <li>що відволікає мене від контакту із собою;</li>
-          <li>які моменти життя я зазвичай пропускаю;</li>
-          <li>як повернути увагу до себе, своїх переживань і свого життя.</li>
-        </ul>
+      <p class="block">
+        І поки наша увага зайнята всім цим, власне життя відбувається десь на периферії.
+      </p>
 
-        <p>
-          І це не про те, щоб навчитися жити «правильно». А про те, щоб почати помічати свої думки, свої почуття, помічати моменти, з яких насправді складається життя.
-        </p>
+      <p class="block">Протягом 10 днів ми будемо досліджувати:</p>
 
-        <p>
-          Тому що часто проблема не в тому, що нам бракує чогось важливого.
-          А в тому, що ми перестали помічати те, що вже є.
-        </p>
+      <ul>
+        <li>• де найчастіше перебуває моя увага;</li>
+        <li>• що відволікає мене від контакту із собою;</li>
+        <li>• які моменти життя я зазвичай пропускаю;</li>
+        <li>• як повернути увагу до себе, своїх переживань і свого життя.</li>
+      </ul>
 
-        <div class="cta-row">
-          <a class="button" href="mailto:Olga.Sakhnyuk@gmail.com?subject=%D0%9F%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%E2%80%94%20%D0%9F%D0%BE%D0%BC%D1%96%D1%87%D0%B0%D1%8E%D1%87%D0%B8%20%D0%B6%D0%B8%D1%82%D1%82%D1%8F&body=%D0%94%D0%BE%D0%B1%D1%80%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%0A%0A%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%B4%D0%BE%2010-%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D1%97%20%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%BE%D1%97%20%D0%BF%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D1%96.%0A%0A%D0%9C%D0%BE%D1%94%20%D1%96%D0%BC%E2%80%99%D1%8F%3A%0A%D0%9C%D1%96%D0%B9%20email%3A%0A">
-            Приєднатися
-          </a>
-          <span class="small-note">Натисніть, щоб надіслати email.</span>
-        </div>
-      </article>
+      <p class="block">
+        І це не про те, щоб навчитися жити «правильно». А про те, щоб почати помічати свої думки, свої почуття, помічати моменти, з яких насправді складається життя.
+      </p>
+
+      <p class="block">
+        Тому що часто проблема не в тому, що нам бракує чогось важливого.
+        А в тому, що ми перестали помічати те, що вже є.
+      </p>
+
+      <div class="cta-row">
+        <a class="button" href="mailto:Olga.Sakhnyuk@gmail.com?subject=%D0%9F%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%E2%80%94%20%D0%9F%D0%BE%D0%BC%D1%96%D1%87%D0%B0%D1%8E%D1%87%D0%B8%20%D0%B6%D0%B8%D1%82%D1%82%D1%8F&body=%D0%94%D0%BE%D0%B1%D1%80%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%0A%0A%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%B4%D0%BE%2010-%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D1%97%20%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%BE%D1%97%20%D0%BF%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D1%96.%0A%0A%D0%9C%D0%BE%D1%94%20%D1%96%D0%BC%E2%80%99%D1%8F%3A%0A%D0%9C%D1%96%D0%B9%20email%3A%0A">
+          Приєднатися
+        </a>
+        <div class="small-note">Натисніть, щоб надіслати email.</div>
+      </div>
     </section>
 
-    <footer>
-      © 2026 · Помічаючи життя
-    </footer>
+    <footer>© 2026 · Помічаючи життя</footer>
   </main>
 </body>
 </html>
