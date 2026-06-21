@@ -525,6 +525,11 @@
     var WEB3FORMS_KEY = "0e720b75-5c20-4c1e-8c9e-f73be836e0b0";
     var OLGA_EMAIL = "Olga.Sakhnyuk@gmail.com"; // резервний email-варіант, якщо ключ не задано
 
+    /* Google Apps Script (безкоштовно): запис у Google-таблицю + лист-підтвердження учаснику.
+       Вставте сюди URL вашого веб-застосунку (закінчується на /exec).
+       Поки тут "PASTE_HERE", цей крок просто пропускається. */
+    var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwX_k0wu1rWf5thDPw_Fpl4Fv6gRVtQo1gHzBALYDypF8SBGbbXeFqTklz0Igi0k41tog/exec";
+
     /* ---- Телефонне поле з прапорами (за замовчуванням Норвегія) ---- */
     var phoneInput = document.querySelector("#phone");
     var iti = window.intlTelInput(phoneInput, {
@@ -569,6 +574,9 @@
       formError.style.display = "none";
       submitBtn.disabled = true;
       submitBtn.textContent = "Надсилаємо…";
+
+      // Паралельно: запис у Google-таблицю + лист-підтвердження учаснику (необов'язково)
+      sendToSheet(name, email, phoneNumber);
 
       var keySet = WEB3FORMS_KEY.indexOf("PASTE") === -1 && WEB3FORMS_KEY.length > 10;
 
@@ -617,6 +625,20 @@
       submitBtn.disabled = false;
       submitBtn.textContent = "Зареєструватися";
       formError.style.display = "block";
+    }
+
+    /* Надсилає копію заявки в Google Apps Script (Google-таблиця + лист-підтвердження).
+       "Best-effort": не впливає на показ подяки — нею керує Web3Forms. */
+    function sendToSheet(name, email, phone) {
+      if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("PASTE") !== -1) return;
+      try {
+        fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ name: name, email: email, phone: phone })
+        });
+      } catch (e) { /* ignorуємо помилки — головний канал це Web3Forms */ }
     }
   </script>
 </body>
